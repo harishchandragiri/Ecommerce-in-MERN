@@ -9,13 +9,17 @@ function Header() {
 
     const [isOpen, setisOpen]= useState(false)
 
+    const handleClick=()=>{
+        setisOpen(false);
+    }
+
   return (
     <nav>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/search"}>
+        <Link onClick={()=> setisOpen(false)} to={"/"}>Home</Link>
+        <Link onClick={()=> setisOpen(false)} to={"/search"}>
             <FaSearch />
         </Link>
-        <Link to={'/Cart'}>
+        <Link onClick={()=> setisOpen(false)} to={'/Cart'}>
             <FaShoppingBag/>
         </Link>
         {
@@ -29,18 +33,18 @@ function Header() {
                         {
                             user.role==='admin' && (
                                 // route of admin dashboard
-                                <Link to='/admin/dashboard'>Admin</Link>
+                                <Link onClick={()=> setisOpen(false)} to='/admin/dashboard'>Admin</Link>
                             )
                         }
-                        <Link to='/orders'>Orders</Link>
-                        <button>
+                        <Link onClick={()=> setisOpen(false)} to='/orders'>Orders</Link>
+                        <button onClick={handleClick}>
                             <FaSignOutAlt/>
                         </button>
                     </div>
                 </dialog>
                 </>
             ):(
-                <Link to={'/login'}>
+                <Link  to={'/login'}>
                     <FaSignInAlt/>
                 </Link>
             )
