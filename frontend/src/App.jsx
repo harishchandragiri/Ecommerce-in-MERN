@@ -3,10 +3,13 @@ import './App.css'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Header from './components/header'
 import Loading from './components/Loading'
+import ProductCart from './components/Product-Cart'
+
 
 const Search= lazy(()=> import('./pages/Search'))
 const Cart=  lazy(()=> import('./pages/Cart'))
 const Home = lazy(()=> import('./pages/Home')) 
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +24,7 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/search' element={<Search/>}/>
             <Route path='/cart' element={<Cart/>}/>
+            <Route path='/productcart' element={<ProductCart/>}/>
 
           </Routes>
         </Suspense>
