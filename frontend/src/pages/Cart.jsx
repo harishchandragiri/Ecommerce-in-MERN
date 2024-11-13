@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 
+const items= [
+
+]
 const subtotal=10000;
 const shippingCharge=150;
 const tax=Math.round(subtotal*0.13);
@@ -8,11 +12,25 @@ const total= subtotal + tax + shippingCharge;
 
 function Cart() {
   const [couponCode, setcouponCode] = useState('');
-  const [isValidCode, setisValidCode] = useState(true)
+  const [isValidCode, setisValidCode] = useState(false);
+
+  useEffect(()=>{
+    const timeOutId = setTimeout(() => {
+      if (Math.random() > 0.5) setisValidCode(true);
+      else setisValidCode(false);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOutId);
+      setisValidCode(false);
+    }
+  }, [couponCode]);
+
   return (
     <div className='block sm:flex'>
       <main className='w-full sm:w-[75vw] mx-1 h-56'>
         {/* main content of the main tag */}
+
         
       </main>
       <aside className='w-full sm:w-[25vw] mx-1'>
@@ -29,14 +47,16 @@ function Cart() {
         onChange={(e)=>setcouponCode(e.target.value)} />
        <div>
        {
-          couponCode && isValidCode ? (
-            <span className='my-1'>
-              Rs. {discount} off using the code <code>{couponCode}</code>
-            </span>
-          ):(
-            <span className='text-red-700 my-1'>
-              Invalid Coupon!
-            </span>
+          couponCode &&(
+            isValidCode ? (
+              <span className='text-green-700 my-1'>
+                Rs. {discount} off using the code <code>{couponCode}</code>
+              </span>
+            ):(
+              <span className='text-red-700 my-1'>
+                Invalid Coupon!
+              </span>
+            )
           )
         }
        </div>
