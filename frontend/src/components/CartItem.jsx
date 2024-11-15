@@ -15,9 +15,9 @@ function CartItem({cartItem}) {
        <span className='font-bold'>Rs. {price}</span>
       </article>
       <div>
-        <button className=' border border-black w-[25px] rounded-md border-[2px] bg-yellow-200 m-1'>-</button>
+        <button className='border-black w-[25px] rounded-md border-[2px] bg-yellow-200 m-1'>-</button>
         <p className='font-bold m-1'>{stock}</p>
-        <button className=' border border-black w-[25px] rounded-md border-[2px] bg-yellow-200 m-1'>+</button>
+        <button className='border-black w-[25px] rounded-md border-[2px] bg-yellow-200 m-1'>+</button>
       </div>
       <button>
         <FaTrash></FaTrash>
