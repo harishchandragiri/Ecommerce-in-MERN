@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import CartItem from '../components/CartItem';
+import { Link } from 'react-router-dom';
 
-const cartItems= [
+const cartItems = [
 {
   productId:'asdfgfdkj123',
   name:'mackbook',
@@ -103,6 +104,11 @@ function Cart() {
           )
         }
        </div>
+        <div className='mt-2'>
+        {
+        cartItems.length > 0 && <Link className='sm:px-10 px-5 bg-yellow-200 border-2 border-black rounded-md py-1' to='/shipping'>Checkout</Link>
+       }
+        </div>
        </div>
       </aside>
     </div>
