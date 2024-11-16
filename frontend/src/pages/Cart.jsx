@@ -64,8 +64,8 @@ function Cart() {
   }, [couponCode]);
 
   return (
-    <div className='flex'>
-      <main className='w-[80vw] sm:w-[75vw] mx-1'>
+    <div className='flex h-screen '>
+      <main className='w-[80vw] sm:w-[75vw] mx-1 overflow-x-hidden overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200'>
         {/* main content of the main tag */}
         {
           cartItems.length > 0 ? (
@@ -76,7 +76,7 @@ function Cart() {
         }
 
       </main>
-      <aside className='sm:w-[25vw] mx-1'>
+      <aside className='sm:w-[25vw] mx-1 h-screen sticky top-0'>
        <div className='text-left p-2 m-1'>
         <p className='my-1'>Subtotal: Rs. {subtotal}</p>
         <p className='my-1'>Shipping Charge: Rs. {shippingCharge}</p>

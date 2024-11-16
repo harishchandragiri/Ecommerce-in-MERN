@@ -3,12 +3,12 @@ import './App.css'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Header from './components/header'
 import Loading from './components/Loading'
-import ProductCart from './components/Product-Cart'
 
 
 const Search= lazy(()=> import('./pages/Search'))
 const Cart=  lazy(()=> import('./pages/Cart'))
 const Home = lazy(()=> import('./pages/Home')) 
+const ProductCart = lazy(()=> import('./components/Product-Cart')) 
 
 
 function App() {

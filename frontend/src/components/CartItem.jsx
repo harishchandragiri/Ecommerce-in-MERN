@@ -7,7 +7,7 @@ function CartItem({cartItem}) {
 
   return (
     <div className='w-full h-[200px]  border m-1 my-1 flex items-center'>
-      <img className='w-[150px] h-[150px] border m-1' src={photo} alt={name} />
+      <img className='sm:w-[150px] sm:h-[150px] w-[100px] h-[100px] border rounded-md m-1' src={photo} alt={name} />
    <div className='flex items-center ml-auto space-x-10 m-2'>
    <article>
        <Link className='font-bold' to={`/product/${productId}`}>{name}</Link>

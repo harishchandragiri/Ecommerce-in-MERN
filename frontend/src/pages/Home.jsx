@@ -13,7 +13,7 @@ function Home() {
         <h1 className='m-[20px] p-[5px] font-bold'>
           Latest Products
         </h1>
-        <Link className='m-[20px] p-[5px]'>
+        <Link to={'/productcart'} className='m-[20px] p-[5px]'>
           More
         </Link>
       </div>
