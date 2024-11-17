@@ -9,6 +9,7 @@ const Cart=  lazy(()=> import('./pages/Cart'))
 const Home = lazy(()=> import('./pages/Home')) 
 const ProductCart = lazy(()=> import('./components/Product-Cart')) 
 const Shipping = lazy(()=> import('./pages/Shipping')) 
+const Login = lazy(()=> import('./pages/login')) 
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path='/search' element={<Search/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/productcart' element={<ProductCart/>}/>
+            <Route path='/login' element={<Login/>}/>
             {/* loggedIn files only */}
             <Route>
               <Route path='/shipping' element={<Shipping/>}/>
