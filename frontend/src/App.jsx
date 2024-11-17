@@ -10,6 +10,8 @@ const Home = lazy(()=> import('./pages/Home'))
 const ProductCart = lazy(()=> import('./components/Product-Cart')) 
 const Shipping = lazy(()=> import('./pages/Shipping')) 
 const Login = lazy(()=> import('./pages/login')) 
+const Orders = lazy(()=> import('./pages/Orders')) 
+const OrderDetails = lazy(()=> import('./pages/orderDetails')) 
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
             {/* loggedIn files only */}
             <Route>
               <Route path='/shipping' element={<Shipping/>}/>
+              <Route path='/orders' element={<Orders/>}/>
+              <Route path='/order/:id' element={<OrderDetails/>}/>
             </Route>
 
           </Routes>
