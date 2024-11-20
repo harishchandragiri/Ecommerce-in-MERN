@@ -9,10 +9,10 @@ const AdminSidebar = () => {
   const location = useLocation();
 
   const [showModal, setShowModal] = useState(false);
-  const [phoneActive, setPhoneActive] = useState(window.innerWidth < 1100);
+  const [phoneActive, setPhoneActive] = useState(window.innerWidth < 640);
 
   const resizeHandler = () => {
-    setPhoneActive(window.innerWidth < 1100);
+    setPhoneActive(window.innerWidth < 640);
   };
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const AdminSidebar = () => {
       {/* Hamburger Button */}
       {phoneActive && (
         <button
-          className="fixed top-4 left-4 z-50 text-2xl p-2 bg-gray-800 text-white rounded"
+          className="fixed top-4 left-7 z-30 text-2xl p-1 bg-gray-800 text-white rounded"
           onClick={() => setShowModal(true)}
         >
           <HiMenuAlt4 />
@@ -36,16 +36,16 @@ const AdminSidebar = () => {
 
       {/* Sidebar */}
       <aside
-        className={`bg-gray-800 text-white h-full fixed top-0 ${
+        className={`bg-gray-800 text-white h-full   ${
           phoneActive
-            ? `z-40 w-64 transform transition-transform ${
+            ? `z-40 w-64 top-0 fixed transform transition-transform ${
                 showModal ? "translate-x-0" : "-translate-x-full"
               }`
-            : "w-64"
+            : "w-64 top-[60px] fixed"
         }`}
       >
         <div className="flex items-center justify-between p-4">
-          <h2 className="text-xl font-bold">Logo</h2>
+          {/* <h2 className="text-xl font-bold">Logo</h2> */}
           {phoneActive && (
             <button
               className="text-xl"
