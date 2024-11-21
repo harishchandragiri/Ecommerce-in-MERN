@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AiFillFileText } from "react-icons/ai";
-import { RiDashboardFill, RiShoppingBag3Fill } from "react-icons/ri";
+import { RiDashboardFill, RiShoppingBag3Fill, RiCoupon3Fill } from "react-icons/ri";
 import { IoIosPeople } from "react-icons/io";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
@@ -95,6 +95,12 @@ const DivOne = ({ location }) => (
         url="/admin/transaction"
         text="Transaction"
         Icon={AiFillFileText}
+        location={location}
+      />
+      <Li
+        url="/admin/coupon"
+        text="Coupon"
+        Icon={RiCoupon3Fill}
         location={location}
       />
     </ul>
