@@ -13,6 +13,9 @@ const Login = lazy(()=> import('./pages/login'))
 const Orders = lazy(()=> import('./pages/Orders')) 
 const OrderDetails = lazy(()=> import('./pages/orderDetails')) 
 const Dashboadr = lazy(()=> import('./pages/AdminPages/Dashboadr')) 
+const Product = lazy(()=> import('./pages/AdminPages/Product')) 
+const AddProduct = lazy(()=> import('./components/AdminComponents/AddProduct')) 
+const ManageProduct = lazy(()=> import('./components/AdminComponents/ManageProduct')) 
 
 
 function App() {
@@ -40,6 +43,9 @@ function App() {
             {/* admin route */}
             <Route>
               <Route path='/admin/dashboard' element={<Dashboadr/>} />
+              <Route path='/admin/product' element={<Product/>} />
+              <Route path='/admin/addproduct' element={<AddProduct/>} />
+              <Route path='/admin/:id' element={<ManageProduct/>} />
             </Route>
 
           </Routes>
