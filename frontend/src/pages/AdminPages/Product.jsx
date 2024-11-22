@@ -78,7 +78,7 @@ function Product() {
                 <td className="px-4 py-2 text-gray-700">{order.amount}</td>
                 <td className="px-4 py-2">
                 <Link
-                    to={`/admin/${order.id}`}
+                    to={`/admin/manageproduct/${order.id}`}
                     className="px-5 py-1 text-white bg-blue-500 rounded hover:bg-blue-600"
                     >
                     Manage
