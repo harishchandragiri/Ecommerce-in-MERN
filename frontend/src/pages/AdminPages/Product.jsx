@@ -60,11 +60,11 @@ function Product() {
         <table className="min-w-full border border-gray-200">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Photo</th>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Name</th>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Price</th>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Stock</th>
-              <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">Action</th>
+              <th className="px-14 py-2 text-left text-sm font-semibold text-gray-600">Photo</th>
+              <th className="px-14 py-2 text-left text-sm font-semibold text-gray-600">Name</th>
+              <th className="px-14 py-2 text-left text-sm font-semibold text-gray-600">Price</th>
+              <th className="px-14 py-2 text-left text-sm font-semibold text-gray-600">Stock</th>
+              <th className="px-14 py-2 text-left text-sm font-semibold text-gray-600">Action</th>
             </tr>
           </thead>
           <tbody>

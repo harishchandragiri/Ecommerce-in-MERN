@@ -16,6 +16,7 @@ const Dashboadr = lazy(()=> import('./pages/AdminPages/Dashboadr'))
 const Product = lazy(()=> import('./pages/AdminPages/Product')) 
 const AddProduct = lazy(()=> import('./components/AdminComponents/AddProduct')) 
 const ManageProduct = lazy(()=> import('./components/AdminComponents/ManageProduct')) 
+const Customer = lazy(()=> import('./pages/AdminPages/Customer')) 
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
               <Route path='/admin/product' element={<Product/>} />
               <Route path='/admin/addproduct' element={<AddProduct/>} />
               <Route path='/admin/manageproduct/:id' element={<ManageProduct/>} />
+              <Route path='/admin/customer' element={<Customer/>} />
             </Route>
 
           </Routes>
