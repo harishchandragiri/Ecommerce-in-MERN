@@ -10,7 +10,7 @@ function Search() {
 
   return (
     <div className='flex '>
-      <aside className='w-[40vw] sm:w-[30vw] mx-1 p-2 h-screen sticky top-0'>
+      <aside className='w-[40vw] mx-1 p-2 h-screen sticky top-0'>
         <h2 className='font-bold text-[20px]'>Filters</h2>
         <div className='my-2 py-2'>
           <h4 className='text-left font-black'>Sort</h4>
