@@ -10,7 +10,9 @@ function ManageProduct() {
       <div className='absolute left-0 sm:left-64 w-full h-full sm:pr-64 flex justify-center items-center'>
         <div className='bg-orange-100 m-2 sm:m-4 block w-[200px] border border-black rounded-sm'>
           <p className='h-[30px] m-3'>Stocks Avaliable</p>
-          <img className='h-[200px] w-[175px] mx-3 my-2 border-[2px] rounded-md' src={figure} alt="mackbook" />
+          <div className="flex justify-center items-center">
+            <img className='h-[200px] w-[175px] mx-3 my-2 border-[2px] rounded-md flex-shrink-0' src={figure} alt="mackbook" />
+          </div>
           <h2 className='font-bold m-2 p-1'>Name</h2>
           <p className='font-bold m-2 p-1'>Price</p>
         </div>

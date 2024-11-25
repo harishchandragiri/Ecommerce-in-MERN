@@ -17,6 +17,9 @@ const Product = lazy(()=> import('./pages/AdminPages/Product'))
 const AddProduct = lazy(()=> import('./components/AdminComponents/AddProduct')) 
 const ManageProduct = lazy(()=> import('./components/AdminComponents/ManageProduct')) 
 const Customer = lazy(()=> import('./pages/AdminPages/Customer')) 
+const Transaction = lazy(()=> import('./pages/AdminPages/Transaction')) 
+const Coupon = lazy(()=> import('./pages/AdminPages/Coupon')) 
+const ManageTransaction = lazy(()=> import('./components/AdminComponents/ManageTransaction')) 
 
 
 function App() {
@@ -47,7 +50,10 @@ function App() {
               <Route path='/admin/product' element={<Product/>} />
               <Route path='/admin/addproduct' element={<AddProduct/>} />
               <Route path='/admin/manageproduct/:id' element={<ManageProduct/>} />
+              <Route path='/admin/managetransaction/:id' element={<ManageTransaction/>} />
               <Route path='/admin/customer' element={<Customer/>} />
+              <Route path='/admin/transaction' element={<Transaction />} />
+              <Route path='/admin/coupon' element={<Coupon />} />
             </Route>
 
           </Routes>

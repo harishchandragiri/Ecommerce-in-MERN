@@ -70,8 +70,10 @@ function Product() {
           <tbody>
             {orders.map((order, index) => (
               <tr key={index} className="border-t">
-                <td className="px-4 py-2 text-gray-700 flex justify-center items-center">
-                  <img className='h-[150px] w-[250px] border-[2px] rounded-md' src={order.figure1} alt={order.id} />
+                <td className="px-2 sm:px-4 py-2 text-gray-700 flex justify-center items-center">
+                  <div className='w-[180px]'>
+                    <img className='h-[100px] w-[180px] border-[2px] rounded-md' src={order.figure1} alt={order.id} />
+                  </div>
                 </td>
                 <td className="px-4 py-2 text-gray-700">{order.quantity}</td>
                 <td className="px-4 py-2 text-gray-700">{order.discount}</td>

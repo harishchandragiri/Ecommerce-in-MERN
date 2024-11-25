@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import AdminSideBar from '../../components/AdminComponents/AdminSideBar'
 import figure from '../image/mackbook.jpg'
 import { FaTrash } from 'react-icons/fa';
@@ -71,8 +70,10 @@ function Customer() {
           <tbody>
             {orders.map((order, index) => (
               <tr key={index} className="border-t">
-                <td className="px-1 py-2 text-gray-700 flex justify-center items-center">
-                  <img className='h-[100px] w-[100px] border-[2px] rounded-full object-cover' src={order.figure1} alt={order.id} />
+                <td className="px-1 py-1 text-gray-700 flex justify-center items-center">
+                  <div className='w-[72px]'>
+                    <img className='h-[50px] w-[50px] sm:h-[70px] sm:w-[70px] border-[2px] rounded-full object-cover' src={order.figure1} alt={order.id} />
+                  </div>
                 </td>
                 <td className="px-1 py-2 text-gray-700">{order.quantity}</td>
                 <td className="px-1 py-2 text-gray-700">{order.discount}</td>
