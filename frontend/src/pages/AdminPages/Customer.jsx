@@ -60,12 +60,12 @@ function Customer() {
         <table className="min-w-full border border-gray-200">
           <thead className="bg-gray-100">
             <tr>
-              <th className="pl-14 py-2 text-left text-sm font-semibold text-gray-600">Photo</th>
-              <th className="pl-14 py-2 text-left text-sm font-semibold text-gray-600">Name</th>
-              <th className="pl-14 py-2 text-left text-sm font-semibold text-gray-600">Gender</th>
-              <th className="pl-14 py-2 text-left text-sm font-semibold text-gray-600">Email</th>
-              <th className="pl-14 py-2 text-left text-sm font-semibold text-gray-600">Role</th>
-              <th className="pl-14 py-2 text-left text-sm font-semibold text-gray-600">Action</th>
+              <th className="px-4 py-2 text-center text-sm font-semibold text-gray-600">Photo</th>
+              <th className="px-4 py-2 text-center text-sm font-semibold text-gray-600">Name</th>
+              <th className="px-4 py-2 text-center text-sm font-semibold text-gray-600">Gender</th>
+              <th className="px-4 py-2 text-center text-sm font-semibold text-gray-600">Email</th>
+              <th className="px-4 py-2 text-center text-sm font-semibold text-gray-600">Role</th>
+              <th className="px-4 py-2 text-center text-sm font-semibold text-gray-600">Action</th>
             </tr>
           </thead>
           <tbody>
