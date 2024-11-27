@@ -13,7 +13,7 @@ function ManageTransaction() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Process the selected option
-    console.log('Selected option:', selectedOption);
+    // console.log('Selected option:', selectedOption);
   };
 
   return (
