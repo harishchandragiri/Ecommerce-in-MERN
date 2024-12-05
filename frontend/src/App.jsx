@@ -10,6 +10,7 @@ const Home = lazy(()=> import('./pages/Home'))
 const ProductCart = lazy(()=> import('./components/Product-Cart')) 
 const Shipping = lazy(()=> import('./pages/Shipping')) 
 const Login = lazy(()=> import('./pages/login')) 
+const Register = lazy(()=> import('./pages/Register')) 
 const Orders = lazy(()=> import('./pages/Orders')) 
 const OrderDetails = lazy(()=> import('./pages/orderDetails')) 
 const Dashboadr = lazy(()=> import('./pages/AdminPages/Dashboadr')) 
@@ -37,6 +38,7 @@ function App() {
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/productcart' element={<ProductCart/>}/>
             <Route path='/login' element={<Login/>}/>
+            <Route path='/register' element={<Register/>}/>
             {/* loggedIn files only */}
             <Route>
               <Route path='/shipping' element={<Shipping/>}/>

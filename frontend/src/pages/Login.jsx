@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import {FcGoogle} from 'react-icons/fc'
 
 function Login() {
-    const [gender, SetGender] = useState('');
-    const [Name, SetName] = useState('');
-    const [date, Setdate] = useState('');
+
+    const [email, SetEmail] = useState('');
+    const [password, SetPassword] = useState('');
 
   return (
     <div>
@@ -15,43 +15,16 @@ function Login() {
                 <hr className='border-[1px] border-black' />
                 <form className='relative'>
                 <div className='relative w-full h-[25px]'>
-                  <label className='absolute left-[50px] h-[40px] font-bold'>Name</label>
+                  <label className='absolute left-[50px] h-[40px] font-bold'>Email</label>
                 </div>
-                <input className=' h-[40px] rounded-md p-1 border-black border-[2px] my-2 w-[200px]'  type="text" value={Name} onChange={(e)=> SetName(e.target.value)}/>
+                <input className=' h-[40px] rounded-md p-1 border-black border-[2px] my-2 w-[200px]'  type="email" value={email} onChange={(e)=> SetEmail(e.target.value)}/>
                 <div className='relative w-full h-[25px]'>
-                  <label className='absolute left-[50px] h-[40px] font-bold'>Date of Birth</label>
+                  <label className='absolute left-[50px] h-[40px] font-bold'>Password</label>
                 </div>
-                <input className=' h-[40px] rounded-md p-1 border-black border-[2px] my-2 w-[200px]'  type="date" value={date} onChange={(e)=> Setdate(e.target.value)}/>
-                <div className='relative w-full h-[25px]'>
-                  <label className='absolute left-[50px] h-[40px] font-bold'>Gender</label>
-                </div>
-                <div className='h-[40px] w-full'>
-                <label className='m-2' htmlFor="male">Male</label>
-                <input type="radio" 
-                       id='male'
-                       name="gender"
-                       value="Male"
-                       checked={gender === "Male"}
-                       onChange={(e)=> SetGender(e.target.value)}/>
-   
-                <label className='m-2' htmlFor="female">Female</label>
-                <input type="radio" 
-                       id='female'
-                       name="gender"
-                       value="Female"
-                       checked={gender === "Female"}
-                       onChange={(e)=> SetGender(e.target.value)}/>
-         
-                <label className='m-2' htmlFor="Others">Other</label>
-                <input type="radio" 
-                       id='Others'
-                       name="gender"
-                       value="Other"
-                       checked={gender === "Other"}
-                       onChange={(e)=> SetGender(e.target.value)}/>
-                </div>
+                <input className=' h-[40px] rounded-md p-1 border-black border-[2px] my-2 w-[200px]'  type="password" value={password} onChange={(e)=> SetPassword(e.target.value)}/>
+
                 </form>
-                <div className='w-full flex justify-center items-center'>
+                <div className='mt-7 w-full flex justify-center items-center'>
                     <button className='flex bg-slate-300 h-[35px] rounded-md p-1 border-black border-[2px] my-2 w-[200px]'>
                         <span  className='mx-[5px] pt-[5px]'><FcGoogle/></span><span className='mx-[5px] pb-[5px]'>SignIn with Google</span>
                     </button>
