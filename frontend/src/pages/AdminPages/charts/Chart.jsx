@@ -25,22 +25,6 @@ function Charts() {
           hoverOffset: 4
         }]
       };
-      
-    //   data of Pie chart
-      // const Piedata = {
-      //   labels: ['Red', 'Blue', 'Yellow', 'Green'],
-      //   datasets: [{
-      //     label: 'My First Dataset',
-      //     data: data2,
-      //     backgroundColor: [
-      //       'rgb(255, 99, 132)',
-      //       'rgb(54, 162, 235)',
-      //       'rgb(255, 205, 86)',
-      //       'rgb(0, 128, 0)'
-      //     ],
-      //     hoverOffset: 4
-      //   }]
-      // };
 
     //   data of bar chart
     const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
@@ -101,12 +85,6 @@ function Charts() {
         data: Doughnutdata,
       };
 
-    //   configuration of Pie chart
-      // const config2 = {
-      //   type: 'pie',
-      //   data: Piedata,
-      // };
-
     //   configuration of bar
     const config3 = {
         type: 'bar',
@@ -122,22 +100,17 @@ function Charts() {
 
   return (
     <div className='w-full flex flex-wrap justify-evenly m-2'>
-        <div className=' py-7 border p-3 m-3 h-[300px] w-[350px] sm:h-[350px] sm:w-[350px]'>
+        <div className=' py-7 border p-3 m-3 h-[400px] w-[350px] mps:h-[450px] mps:w-[500px] sm:h-[400px] sm:w-[400px] md:w-[450px] md:h-[400px] '>
             <h2>Doughnut Chart Example</h2>
             <Doughnut data={config1.data} />
         </div>
 
-        <div className='overflow-x-auto py-4 border p-3 m-3 h-[250px] w-[350px] sm:h-[350px] sm:w-[500px]'>
+        <div className='overflow-x-auto py-4 border p-3 m-3 h-[300px] w-[350px] mps:h-[300px] mps:w-[500px] sm:h-[400px] sm:w-[400px] md:w-[450px] md:h-[400px]'>
           <div className=' min-w-full'>
              <h2>Bar Chart Example</h2>
              <Bar  data={config3.data} options={config3.options} />
           </div>
         </div>
-            
-        {/* <div className='py-7 border p-3 m-3 min-h-[300px] min-w-[250px] max-h-[450px] max-w-[400px] grow'>
-            <h2>Pie Chart Example</h2>
-            <Pie  data={config1.data} />
-        </div> */}
   </div>
   )
 }

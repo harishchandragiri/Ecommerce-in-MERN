@@ -17,6 +17,7 @@ function Header() {
     <nav className='bg-slate-300 relative flex justify-end items-center h-[60px] '>
         <h1 className='absolute ml-2 font-bold text-2xl left-1 hidden sm:block '>Logo</h1>
         <Link className=' p-[20px] ' onClick={()=> setisOpen(false)} to={"/"}>Home</Link>
+        <Link className=' p-[20px] ' onClick={()=> setisOpen(false)} to={"/update"}>Update</Link>
         <Link className=' p-[20px] ' onClick={()=> setisOpen(false)} to={"/search"}>
             <FaSearch />
         </Link>

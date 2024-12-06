@@ -21,6 +21,7 @@ const Customer = lazy(()=> import('./pages/AdminPages/Customer'))
 const Transaction = lazy(()=> import('./pages/AdminPages/Transaction')) 
 const Coupon = lazy(()=> import('./pages/AdminPages/Coupon')) 
 const ManageTransaction = lazy(()=> import('./components/AdminComponents/ManageTransaction')) 
+const Update = lazy(()=> import('./pages/Update')) 
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
             {/* loggedIn files only */}
             <Route>
               <Route path='/shipping' element={<Shipping/>}/>
+              <Route path='/update' element={<Update/>}/>
               <Route path='/orders' element={<Orders/>}/>
               <Route path='/order/:id' element={<OrderDetails/>}/>
             </Route>

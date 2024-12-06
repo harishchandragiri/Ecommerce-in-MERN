@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'sps': '400px',
+        'mps': '500px',
+      }
+    },
   },
   plugins: [
     require('tailwind-scrollbar'),
