@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ProductCart from '../components/Product-Cart'
+import figure from './image/fig1.jpg'
 
 function Search() {
   const [search, setSearch] = useState('');
@@ -36,7 +37,7 @@ function Search() {
         </div>
         <div>
         {/* productId='', price='', name='', photo='', stock='' */}
-          <ProductCart handler={addToCartHandler} />    
+          <ProductCart  image={figure} />    
         </div>
       </main>
     </div>
