@@ -12,7 +12,7 @@ class ApiError extends Error{
         this.success=false
         this.errors=errors
 
-        // Just for the debug purpose
+        // Just for the debug purpose  and can remove during deployment
         if(stack){
             this.stack=stack
         }else{
