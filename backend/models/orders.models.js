@@ -24,7 +24,7 @@ const orderSchema = new Schema({
     },
     orderBy:{
         type: Schema.Types.ObjectId,
-        ref: 'signUp',      // Reference to the User model
+        ref: 'User',      // Reference to the User model
         required: true
     }
   },

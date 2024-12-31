@@ -17,7 +17,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    gendar: {
+    gender: {
         type: String,
         required: true
     },
@@ -28,10 +28,22 @@ const userSchema = new Schema({
     refreshToken: {
         type: String
     },
+    transaction:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Transaction'      // Reference to the Transaction model
+    }, ],
+    order:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Order'      // Reference to the order model
+    }, ],
+    shipping:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Shipping'      // Reference to the shipping model
+    }, ]
   },
     {
         timestamps: true
     }
 )
 
-export const signUp = mongoose.model("signUp", userSchema);
+export const signUp = mongoose.model("User", userSchema);
