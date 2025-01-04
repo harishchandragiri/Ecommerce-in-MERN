@@ -28,7 +28,7 @@ const shippingSchema = new Schema({
     },
     orderBy:{
         type: Schema.Types.ObjectId,
-        ref: 'User',      // Reference to the User model
+        ref: 'User',      // Reference to the User model of user.models.js
         required: true
     }
   },
