@@ -19,7 +19,7 @@ const transactionSchema = new Schema({
     },
     orderBy:{
         type: Schema.Types.ObjectId,
-        ref: 'User',      // Reference to the User model
+        ref: 'User',      // Reference to the User model from user.models.js
         required: true
     }
   },
