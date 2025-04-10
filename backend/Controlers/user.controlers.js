@@ -5,22 +5,12 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken";
 
 const registerUser = asyncHandler( async (req, res) => {
-    // get user details from frontend
-    // validation - not empty
-    // check if user already exists: username, email
-    // check for images, check for avatar
-    // upload them to cloudinary, avatar
-    // create user object - create entry in db
-    // remove password and refresh token field from response
-    // check for user creation
-    // return res
 
-
-    const {fullName, email, username, password } = req.body
+    const {fullName, email, password } = req.body
     //console.log("email: ", email);
 
     if (
-        [fullName, email, username, password].some((field) => field?.trim() === "")
+        [fullName, email, password].some((field) => field?.trim() === "")
     ) {
         throw new ApiError(400, "All fields are required")
     }
@@ -32,42 +22,41 @@ const registerUser = asyncHandler( async (req, res) => {
     }
     //console.log(req.files);
 
-    const avatarLocalPath = req.files?.avatar[0]?.path;
-    //const coverImageLocalPath = req.files?.coverImage[0]?.path;
-
-    if (!avatarLocalPath) {
-        throw new ApiError(400, "Avatar file is required")
-    }
-
+    // user file is created 
     const user = await User.create({
-        fullName,
-        avatar: avatar.url,
+        name: fullName,
         email, 
-        password,
-        username: username.toLowerCase()
+        password
     })
 
+    // user get the saved data as the response.
     const createdUser = await User.findById(user._id).select(
-        "-password -refreshToken"
+    //select remove the password and refreshToken as it is indicated as - sign
+        "-password -refreshToken"    
     )
 
+    // response is not received so user is not registered
     if (!createdUser) {
         throw new ApiError(500, "Something went wrong while registering the user")
     }
 
     return res.status(201).json(
+        // the ApiResponse is a class so new keyword is kept
         new ApiResponse(200, createdUser, "User registered Successfully")
     )
 
 } )
 
+// it is called by the loginUser to generate the refresh and access tokens and provide the tokens
 const generateAccessAndRefereshTokens = async(userId) =>{
     try {
         const user = await User.findById(userId)
         const accessToken = user.generateAccessToken()
         const refreshToken = user.generateRefreshToken()
 
+        // user.refreshToken refers to the refreshToken that is defined in user.models
         user.refreshToken = refreshToken
+        // it explicitly saves the modified value in the database
         await user.save({ validateBeforeSave: false })
 
         return {accessToken, refreshToken}
@@ -79,34 +68,21 @@ const generateAccessAndRefereshTokens = async(userId) =>{
 }
 
 const loginUser = asyncHandler(async (req, res) =>{
-    // req body -> data
-    // username or email
-    //find the user
-    //password check
-    //access and referesh token
-    //send cookie
 
-    const {email, username, password} = req.body
+    const {email, password} = req.body
     console.log(email);
 
-    if (!username && !email) {
-        throw new ApiError(400, "username or email is required")
+    if (!email) {
+        throw new ApiError(400, "email is required")
     }
-    
-    // Here is an alternative of above code based on logic discussed in video:
-    // if (!(username || email)) {
-    //     throw new ApiError(400, "username or email is required")
-        
-    // }
 
-    const user = await User.findOne({
-        $or: [{username}, {email}]
-    })
+    const user = await User.findOne({email})
 
     if (!user) {
         throw new ApiError(404, "User does not exist")
     }
 
+    // it calls the method isPasswordCorrect in the file user.models.js which is defined as userSchema.methods.isPasswordCorrect 
    const isPasswordValid = await user.isPasswordCorrect(password)
 
    if (!isPasswordValid) {
