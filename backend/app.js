@@ -1,6 +1,7 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import { errorHandler } from "./middlewares/error.middleware.js";
 
 const app = express()
 
@@ -20,5 +21,7 @@ import userRouter from './routes/user.routes.js'
 // routes declaration
 app.use('/users', userRouter)
 
+// Global error handler (should be the last middleware)
+app.use(errorHandler);
 
 export {app}
