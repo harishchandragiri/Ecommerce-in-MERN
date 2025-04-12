@@ -49,7 +49,7 @@ const userSchema = new Schema({
     }
 )
 
-// save the password if it is isModified
+// save the password if it is isModified. it is the inbuilt mongoose method called pre('save') method
 userSchema.pre("save", async function (next) {
 
     // if password is not modified 
