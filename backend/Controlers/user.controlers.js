@@ -242,6 +242,7 @@ const updateAccountDetails = asyncHandler(async(req, res) => {
 
 
 
+
 const updateFile = asyncHandler(async(req, res) => {
     const avatarLocalPath = req.file?.path
 
@@ -278,12 +279,11 @@ const updateFile = asyncHandler(async(req, res) => {
 
 export {
     registerUser,
-    generateAccessAndRefereshTokens,
     loginUser,
     logoutUser,
     refreshAccessToken,
     changeCurrentPassword,
-    getCurrentUser,
+    // getCurrentUser,
     updateAccountDetails,
     updateFile,
 }
