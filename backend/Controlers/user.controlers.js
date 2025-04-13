@@ -205,8 +205,6 @@ const changeCurrentPassword = asyncHandler(async(req, res) => {
     .json(new ApiResponse(200, {}, "Password changed successfully"))
 })
 
-
-
 // const getCurrentUser = asyncHandler(async(req, res) => {
 //     return res
 //     .status(200)
@@ -218,28 +216,31 @@ const changeCurrentPassword = asyncHandler(async(req, res) => {
 // })
 
 const updateAccountDetails = asyncHandler(async(req, res) => {
-    const {fullName, email} = req.body
+    const {fullName, date} = req.body
+    const filePath = req.file?.path
 
-    if (!fullName || !email) {
-        throw new ApiError(400, "All fields are required")
+    const updateData = {};
+
+    if (fullName) updateData.name = fullName;
+    if (date) updateData.dateOfBirth = date;
+    if (filePath) updateData.photo = filePath;
+
+    if (Object.keys(updateData).length === 0) {
+        throw new ApiError(400, "No data provided to update");
     }
 
     const user = await User.findByIdAndUpdate(
         req.user?._id,
-        {
-            $set: {
-                fullName,
-                email: email
-            }
-        },
-        {new: true}
-        
-    ).select("-password")
+        { $set: updateData },
+        { new: true }
+    ).select("-password");
 
     return res
     .status(200)
     .json(new ApiResponse(200, user, "Account details updated successfully"))
 });
+
+
 
 const updateFile = asyncHandler(async(req, res) => {
     const avatarLocalPath = req.file?.path

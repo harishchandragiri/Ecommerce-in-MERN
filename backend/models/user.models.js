@@ -28,6 +28,9 @@ const userSchema = new Schema({
         type: Date,
         required: true
     },
+    photo: {
+        type: String
+    },
     refreshToken: {
         type: String
     },
